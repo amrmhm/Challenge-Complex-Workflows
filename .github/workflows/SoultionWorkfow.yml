@@ -1,0 +1,36 @@
+name: SoultionWorkfow
+on: push
+jobs:
+ ubuntu :
+  name: job one 
+  runs-on: ubuntu-latest
+  steps:
+    - name: step one 
+      uses: actions/checkout@v2
+    - name : step two
+      run: date
+ windows:
+   name: job two 
+   runs-on: windows-latest
+   steps:
+    - name: step one 
+      uses: actions/checkout@v2
+    - name : step two
+      run: Get-Date
+ macos:
+  name: job three 
+  runs-on: macos-latest
+  steps:
+    - name: step one 
+      uses: actions/checkout@v2
+    - name : step two
+      run: date
+ depend :
+  name: job four 
+  needs: [ubuntu,windows,macos]
+  runs-on: ubuntu-latest
+  steps:
+    - name: step one 
+      uses: actions/checkout@v2
+    - name : step two
+      run: date
