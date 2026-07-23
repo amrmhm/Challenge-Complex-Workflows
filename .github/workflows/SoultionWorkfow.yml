@@ -10,7 +10,7 @@ jobs:
   # uses: cclauss/Find-Python-syntax-errors-action@90f67be9fb626b675a3971b1d08ab29851cb721f
       uses: cclauss/Find-Python-syntax-errors-action@v0.2.0
     - name: step one 
-      uses: actions/checkout@v
+      uses: actions/checkout@v2
     - name : step two
       run: date
  windows:
