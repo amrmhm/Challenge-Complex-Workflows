@@ -1,0 +1,17 @@
+name: ArtifactSolutionWorkflow
+on: push 
+env:
+  ARTIFACT_NAME : 'anythings'
+jobs :
+  artifact :
+   name : artifact upload 
+   runs-on: ubuntu-latest
+   steps:
+     - name: step one 
+       uses:  actions/checkout@v2
+     - name: step one 
+       uses:  actions/upload-artifact@v2
+       with:
+        name: ${{env.ARTIFACT_NAME}}
+        path: .
+        
