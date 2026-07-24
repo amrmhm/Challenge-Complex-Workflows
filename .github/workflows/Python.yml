@@ -1,0 +1,24 @@
+name: Python Pipeline
+on : push 
+jobs:
+  Test:
+   name : Test Pipeline
+   runs-on : ubuntu-latest
+   steps:
+    - name : Step One
+      uses: actions/checkout@v4
+    - name : Step two
+      run : python Hello.py
+  Build:
+    needs: [Test]
+    name : Build Pipeline
+    runs-on : ubuntu-latest
+    steps:
+     - name : Step One
+       uses: actions/checkout@v4
+     - name : Step two
+       uses : actions/upload-artifact@v4
+       with:
+         name : Hello 
+         path: .
+  
